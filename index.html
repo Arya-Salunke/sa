@@ -427,14 +427,15 @@
       cursor: pointer;
     }
 
-    .gallery-item img {
+    .gallery-item img,
+    .gallery-item svg {
       width: 100%; height: 100%;
-      object-fit: cover;
       display: block;
       transition: transform .5s ease;
     }
 
-    .gallery-item:hover img { transform: scale(1.06); }
+    .gallery-item:hover img,
+    .gallery-item:hover svg { transform: scale(1.06); }
 
     .gallery-item .overlay {
       position: absolute;
@@ -822,30 +823,236 @@
     </div>
 
     <div class="gallery-grid">
+
+      <!-- 1: Bridal -->
       <div class="gallery-item">
-        <img src="https://via.placeholder.com/400x300/d4a574/fff?text=Bridal+Mehndi" alt="Bridal Mehndi Design" loading="lazy" />
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+          <defs>
+            <radialGradient id="bg1" cx="50%" cy="50%" r="70%"><stop offset="0%" stop-color="#e8c99a"/><stop offset="100%" stop-color="#c47c3a"/></radialGradient>
+          </defs>
+          <rect width="400" height="300" fill="url(#bg1)"/>
+          <!-- central mandala -->
+          <circle cx="200" cy="150" r="90" fill="none" stroke="#7c3f1e" stroke-width="1.2" stroke-dasharray="4 3" opacity=".5"/>
+          <circle cx="200" cy="150" r="70" fill="none" stroke="#7c3f1e" stroke-width="1" opacity=".4"/>
+          <circle cx="200" cy="150" r="50" fill="none" stroke="#7c3f1e" stroke-width="1.5" opacity=".5"/>
+          <circle cx="200" cy="150" r="20" fill="#7c3f1e" opacity=".25"/>
+          <!-- petals -->
+          <g transform="translate(200,150)" stroke="#7c3f1e" stroke-width="1.3" fill="#7c3f1e" fill-opacity=".18" opacity=".7">
+            <ellipse rx="12" ry="32" transform="rotate(0)"/>
+            <ellipse rx="12" ry="32" transform="rotate(45)"/>
+            <ellipse rx="12" ry="32" transform="rotate(90)"/>
+            <ellipse rx="12" ry="32" transform="rotate(135)"/>
+          </g>
+          <!-- outer dots -->
+          <g fill="#7c3f1e" opacity=".4">
+            <circle cx="200" cy="52" r="3"/><circle cx="200" cy="248" r="3"/>
+            <circle cx="104" cy="100" r="3"/><circle cx="296" cy="100" r="3"/>
+            <circle cx="104" cy="200" r="3"/><circle cx="296" cy="200" r="3"/>
+          </g>
+          <!-- corner florals -->
+          <g stroke="#7c3f1e" fill="none" stroke-width="1" opacity=".35">
+            <path d="M30,30 Q50,10 70,30 Q50,50 30,30Z"/><circle cx="50" cy="30" r="4" fill="#7c3f1e" fill-opacity=".3"/>
+            <path d="M330,30 Q350,10 370,30 Q350,50 330,30Z"/><circle cx="350" cy="30" r="4" fill="#7c3f1e" fill-opacity=".3"/>
+            <path d="M30,270 Q50,250 70,270 Q50,290 30,270Z"/><circle cx="50" cy="270" r="4" fill="#7c3f1e" fill-opacity=".3"/>
+            <path d="M330,270 Q350,250 370,270 Q350,290 330,270Z"/><circle cx="350" cy="270" r="4" fill="#7c3f1e" fill-opacity=".3"/>
+          </g>
+          <!-- label -->
+          <rect x="0" y="240" width="400" height="60" fill="#7c3f1e" opacity=".55"/>
+          <text x="200" y="278" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="#fdf6ee" letter-spacing="3">BRIDAL MEHNDI</text>
+        </svg>
         <div class="overlay"><span>Bridal</span></div>
       </div>
+
+      <!-- 2: Arabic -->
       <div class="gallery-item">
-        <img src="https://via.placeholder.com/400x300/f4a261/fff?text=Arabic+Design" alt="Arabic Mehndi Design" loading="lazy" />
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+          <defs>
+            <radialGradient id="bg2" cx="30%" cy="40%" r="80%"><stop offset="0%" stop-color="#f9c987"/><stop offset="100%" stop-color="#d47c34"/></radialGradient>
+          </defs>
+          <rect width="400" height="300" fill="url(#bg2)"/>
+          <!-- flowing vines left side -->
+          <g stroke="#7c3f1e" fill="none" stroke-width="1.4" opacity=".55">
+            <path d="M60,20 C80,60 40,100 70,140 C100,180 50,220 80,270"/>
+            <path d="M60,20 Q40,50 55,70 Q70,90 60,110"/>
+            <path d="M70,140 Q45,155 55,175 Q65,195 55,215"/>
+            <!-- leaves -->
+            <ellipse cx="55" cy="70" rx="10" ry="18" transform="rotate(-30,55,70)" fill="#7c3f1e" fill-opacity=".2"/>
+            <ellipse cx="65" cy="110" rx="10" ry="18" transform="rotate(20,65,110)" fill="#7c3f1e" fill-opacity=".2"/>
+            <ellipse cx="52" cy="175" rx="9" ry="16" transform="rotate(-25,52,175)" fill="#7c3f1e" fill-opacity=".2"/>
+            <ellipse cx="60" cy="215" rx="9" ry="16" transform="rotate(15,60,215)" fill="#7c3f1e" fill-opacity=".2"/>
+          </g>
+          <!-- right side mirror -->
+          <g stroke="#7c3f1e" fill="none" stroke-width="1.4" opacity=".55">
+            <path d="M340,20 C320,60 360,100 330,140 C300,180 350,220 320,270"/>
+            <ellipse cx="345" cy="70" rx="10" ry="18" transform="rotate(30,345,70)" fill="#7c3f1e" fill-opacity=".2"/>
+            <ellipse cx="335" cy="110" rx="10" ry="18" transform="rotate(-20,335,110)" fill="#7c3f1e" fill-opacity=".2"/>
+            <ellipse cx="348" cy="175" rx="9" ry="16" transform="rotate(25,348,175)" fill="#7c3f1e" fill-opacity=".2"/>
+          </g>
+          <!-- center paisley -->
+          <g transform="translate(200,130)" stroke="#7c3f1e" stroke-width="1.3" fill="#7c3f1e" fill-opacity=".15" opacity=".7">
+            <path d="M0,-40 C25,-35 35,-10 20,15 C10,35 -15,40 -25,20 C-40,-5 -20,-40 0,-40Z"/>
+            <circle cx="0" cy="-10" r="8" fill-opacity=".25"/>
+            <path d="M0,-40 C5,-20 5,5 0,20" fill="none" stroke-width="1"/>
+          </g>
+          <!-- dots scatter -->
+          <g fill="#7c3f1e" opacity=".35">
+            <circle cx="150" cy="60" r="2.5"/><circle cx="170" cy="45" r="2"/><circle cx="230" cy="60" r="2.5"/><circle cx="250" cy="45" r="2"/>
+            <circle cx="145" cy="220" r="2.5"/><circle cx="255" cy="220" r="2.5"/><circle cx="200" cy="230" r="3"/>
+          </g>
+          <rect x="0" y="240" width="400" height="60" fill="#7c3f1e" opacity=".55"/>
+          <text x="200" y="278" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="#fdf6ee" letter-spacing="3">ARABIC DESIGN</text>
+        </svg>
         <div class="overlay"><span>Arabic</span></div>
       </div>
+
+      <!-- 3: Eid Special -->
       <div class="gallery-item">
-        <img src="https://via.placeholder.com/400x300/e76f51/fff?text=Eid+Special" alt="Eid Special Design" loading="lazy" />
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+          <defs>
+            <radialGradient id="bg3" cx="60%" cy="40%" r="75%"><stop offset="0%" stop-color="#f5b87a"/><stop offset="100%" stop-color="#b85c25"/></radialGradient>
+          </defs>
+          <rect width="400" height="300" fill="url(#bg3)"/>
+          <!-- crescent moon -->
+          <g transform="translate(200,110)" opacity=".6">
+            <path d="M0,-55 A55,55 0 1,1 -38,38 A38,38 0 1,0 0,-55Z" fill="#7c3f1e" fill-opacity=".25" stroke="#7c3f1e" stroke-width="1.5"/>
+          </g>
+          <!-- star -->
+          <g transform="translate(235,75)" fill="#7c3f1e" fill-opacity=".35" opacity=".7">
+            <polygon points="0,-14 3,-5 13,-5 5,1 8,11 0,5 -8,11 -5,1 -13,-5 -3,-5"/>
+          </g>
+          <!-- geometric border pattern -->
+          <g stroke="#7c3f1e" fill="none" stroke-width="1.1" opacity=".4">
+            <rect x="25" y="25" width="350" height="250" rx="4"/>
+            <rect x="35" y="35" width="330" height="230" rx="3"/>
+            <!-- corner diamonds -->
+            <polygon points="25,25 45,35 25,45 5,35"/><polygon points="375,25 395,35 375,45 355,35"/>
+            <polygon points="25,275 45,265 25,255 5,265"/><polygon points="375,275 395,265 375,255 355,265"/>
+          </g>
+          <!-- scattered dots -->
+          <g fill="#7c3f1e" opacity=".3">
+            <circle cx="80" cy="80" r="3"/><circle cx="320" cy="80" r="3"/>
+            <circle cx="80" cy="220" r="3"/><circle cx="320" cy="220" r="3"/>
+            <circle cx="200" cy="55" r="3"/><circle cx="200" cy="245" r="3"/>
+          </g>
+          <rect x="0" y="240" width="400" height="60" fill="#7c3f1e" opacity=".55"/>
+          <text x="200" y="278" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="#fdf6ee" letter-spacing="3">EID SPECIAL</text>
+        </svg>
         <div class="overlay"><span>Eid Special</span></div>
       </div>
+
+      <!-- 4: Floral -->
       <div class="gallery-item">
-        <img src="https://via.placeholder.com/400x300/c8955c/fff?text=Floral+Mehndi" alt="Floral Mehndi Design" loading="lazy" />
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+          <defs>
+            <radialGradient id="bg4" cx="50%" cy="60%" r="70%"><stop offset="0%" stop-color="#ddb87a"/><stop offset="100%" stop-color="#a8622a"/></radialGradient>
+          </defs>
+          <rect width="400" height="300" fill="url(#bg4)"/>
+          <!-- large central flower -->
+          <g transform="translate(200,148)" stroke="#7c3f1e" stroke-width="1.3" fill="#7c3f1e" fill-opacity=".2" opacity=".65">
+            <ellipse rx="14" ry="38" transform="rotate(0)"/>
+            <ellipse rx="14" ry="38" transform="rotate(30)"/>
+            <ellipse rx="14" ry="38" transform="rotate(60)"/>
+            <ellipse rx="14" ry="38" transform="rotate(90)"/>
+            <ellipse rx="14" ry="38" transform="rotate(120)"/>
+            <ellipse rx="14" ry="38" transform="rotate(150)"/>
+          </g>
+          <circle cx="200" cy="148" r="16" fill="#7c3f1e" fill-opacity=".3" stroke="#7c3f1e" stroke-width="1.5"/>
+          <!-- small flowers scattered -->
+          <g stroke="#7c3f1e" fill="#7c3f1e" fill-opacity=".2" stroke-width="1" opacity=".5">
+            <g transform="translate(80,70)"><ellipse rx="6" ry="16" transform="rotate(0)"/><ellipse rx="6" ry="16" transform="rotate(60)"/><ellipse rx="6" ry="16" transform="rotate(120)"/><circle r="5" fill-opacity=".35"/></g>
+            <g transform="translate(320,70)"><ellipse rx="6" ry="16" transform="rotate(0)"/><ellipse rx="6" ry="16" transform="rotate(60)"/><ellipse rx="6" ry="16" transform="rotate(120)"/><circle r="5" fill-opacity=".35"/></g>
+            <g transform="translate(70,210)"><ellipse rx="6" ry="16" transform="rotate(0)"/><ellipse rx="6" ry="16" transform="rotate(60)"/><ellipse rx="6" ry="16" transform="rotate(120)"/><circle r="5" fill-opacity=".35"/></g>
+            <g transform="translate(330,210)"><ellipse rx="6" ry="16" transform="rotate(0)"/><ellipse rx="6" ry="16" transform="rotate(60)"/><ellipse rx="6" ry="16" transform="rotate(120)"/><circle r="5" fill-opacity=".35"/></g>
+          </g>
+          <!-- stems -->
+          <g stroke="#7c3f1e" stroke-width="1.1" fill="none" opacity=".35">
+            <path d="M200,148 Q155,115 80,70"/><path d="M200,148 Q245,115 320,70"/>
+            <path d="M200,148 Q150,175 70,210"/><path d="M200,148 Q250,175 330,210"/>
+          </g>
+          <rect x="0" y="240" width="400" height="60" fill="#7c3f1e" opacity=".55"/>
+          <text x="200" y="278" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="#fdf6ee" letter-spacing="3">FLORAL MEHNDI</text>
+        </svg>
         <div class="overlay"><span>Floral</span></div>
       </div>
+
+      <!-- 5: Party -->
       <div class="gallery-item">
-        <img src="https://via.placeholder.com/400x300/b87333/fff?text=Party+Design" alt="Party Mehndi Design" loading="lazy" />
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+          <defs>
+            <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f0c080"/><stop offset="100%" stop-color="#c06828"/></linearGradient>
+          </defs>
+          <rect width="400" height="300" fill="url(#bg5)"/>
+          <!-- geometric tile pattern -->
+          <g stroke="#7c3f1e" fill="none" stroke-width="1.1" opacity=".35">
+            <!-- grid of diamonds -->
+            <polygon points="100,50 130,80 100,110 70,80"/><polygon points="200,50 230,80 200,110 170,80"/>
+            <polygon points="300,50 330,80 300,110 270,80"/>
+            <polygon points="150,110 180,140 150,170 120,140"/><polygon points="250,110 280,140 250,170 220,140"/>
+            <polygon points="100,170 130,200 100,230 70,200"/><polygon points="200,170 230,200 200,230 170,200"/>
+            <polygon points="300,170 330,200 300,230 270,200"/>
+            <!-- inner dots -->
+            <circle cx="100" cy="80" r="5" fill="#7c3f1e" fill-opacity=".3"/>
+            <circle cx="200" cy="80" r="5" fill="#7c3f1e" fill-opacity=".3"/>
+            <circle cx="300" cy="80" r="5" fill="#7c3f1e" fill-opacity=".3"/>
+            <circle cx="150" cy="140" r="5" fill="#7c3f1e" fill-opacity=".3"/>
+            <circle cx="250" cy="140" r="5" fill="#7c3f1e" fill-opacity=".3"/>
+            <circle cx="100" cy="200" r="5" fill="#7c3f1e" fill-opacity=".3"/>
+            <circle cx="200" cy="200" r="5" fill="#7c3f1e" fill-opacity=".3"/>
+            <circle cx="300" cy="200" r="5" fill="#7c3f1e" fill-opacity=".3"/>
+          </g>
+          <!-- connecting lines -->
+          <g stroke="#7c3f1e" stroke-width=".8" opacity=".25">
+            <line x1="100" y1="110" x2="150" y2="110"/><line x1="150" y1="110" x2="200" y2="110"/>
+            <line x1="200" y1="110" x2="250" y2="110"/><line x1="250" y1="110" x2="300" y2="110"/>
+          </g>
+          <rect x="0" y="240" width="400" height="60" fill="#7c3f1e" opacity=".55"/>
+          <text x="200" y="278" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="#fdf6ee" letter-spacing="3">PARTY MEHNDI</text>
+        </svg>
         <div class="overlay"><span>Party</span></div>
       </div>
+
+      <!-- 6: Kids -->
       <div class="gallery-item">
-        <img src="https://via.placeholder.com/400x300/e8956d/fff?text=Kids+Mehndi" alt="Kids Mehndi Design" loading="lazy" />
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+          <defs>
+            <radialGradient id="bg6" cx="40%" cy="35%" r="75%"><stop offset="0%" stop-color="#f8d49e"/><stop offset="100%" stop-color="#cc7a3a"/></radialGradient>
+          </defs>
+          <rect width="400" height="300" fill="url(#bg6)"/>
+          <!-- big butterfly center -->
+          <g transform="translate(200,130)" stroke="#7c3f1e" stroke-width="1.4" fill="#7c3f1e" fill-opacity=".18" opacity=".65">
+            <!-- upper wings -->
+            <path d="M0,0 C-15,-40 -70,-55 -75,-25 C-80,5 -40,20 0,0Z"/>
+            <path d="M0,0 C15,-40 70,-55 75,-25 C80,5 40,20 0,0Z"/>
+            <!-- lower wings -->
+            <path d="M0,0 C-20,15 -55,50 -40,65 C-25,80 -5,55 0,0Z"/>
+            <path d="M0,0 C20,15 55,50 40,65 C25,80 5,55 0,0Z"/>
+            <!-- body -->
+            <ellipse cx="0" cy="18" rx="5" ry="20" fill-opacity=".4"/>
+            <!-- antenna -->
+            <line x1="0" y1="-2" x2="-18" y2="-35" stroke-width="1.2"/><circle cx="-18" cy="-35" r="3" fill-opacity=".5"/>
+            <line x1="0" y1="-2" x2="18" y2="-35" stroke-width="1.2"/><circle cx="18" cy="-35" r="3" fill-opacity=".5"/>
+            <!-- wing dots -->
+            <circle cx="-38" cy="-15" r="5" fill-opacity=".35"/><circle cx="-55" cy="-5" r="4" fill-opacity=".3"/>
+            <circle cx="38" cy="-15" r="5" fill-opacity=".35"/><circle cx="55" cy="-5" r="4" fill-opacity=".3"/>
+          </g>
+          <!-- small flowers corners -->
+          <g stroke="#7c3f1e" fill="#7c3f1e" fill-opacity=".2" stroke-width="1" opacity=".45">
+            <g transform="translate(55,55)"><ellipse rx="7" ry="18" transform="rotate(0)"/><ellipse rx="7" ry="18" transform="rotate(60)"/><ellipse rx="7" ry="18" transform="rotate(120)"/><circle r="6" fill-opacity=".4"/></g>
+            <g transform="translate(345,55)"><ellipse rx="7" ry="18" transform="rotate(0)"/><ellipse rx="7" ry="18" transform="rotate(60)"/><ellipse rx="7" ry="18" transform="rotate(120)"/><circle r="6" fill-opacity=".4"/></g>
+            <g transform="translate(55,215)"><ellipse rx="7" ry="18" transform="rotate(0)"/><ellipse rx="7" ry="18" transform="rotate(60)"/><ellipse rx="7" ry="18" transform="rotate(120)"/><circle r="6" fill-opacity=".4"/></g>
+            <g transform="translate(345,215)"><ellipse rx="7" ry="18" transform="rotate(0)"/><ellipse rx="7" ry="18" transform="rotate(60)"/><ellipse rx="7" ry="18" transform="rotate(120)"/><circle r="6" fill-opacity=".4"/></g>
+          </g>
+          <!-- scattered hearts -->
+          <g fill="#7c3f1e" fill-opacity=".3" opacity=".6">
+            <path d="M130,55 C130,50 120,45 120,55 C120,62 130,70 130,70 C130,70 140,62 140,55 C140,45 130,50 130,55Z" transform="scale(.7) translate(57,22)"/>
+            <path d="M270,55 C270,50 260,45 260,55 C260,62 270,70 270,70 C270,70 280,62 280,55 C280,45 270,50 270,55Z" transform="scale(.7) translate(-57,22)"/>
+          </g>
+          <rect x="0" y="240" width="400" height="60" fill="#7c3f1e" opacity=".55"/>
+          <text x="200" y="278" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="#fdf6ee" letter-spacing="3">KIDS MEHNDI</text>
+        </svg>
         <div class="overlay"><span>Kids</span></div>
       </div>
+
     </div>
   </div>
 </section>
