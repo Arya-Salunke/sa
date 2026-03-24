@@ -2,41 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arya - Modern Tech Portfolio</title>
+    <title>ARYA | AI-ML Portfolio</title>
     <style>
-        /* Global Styles */
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #f9f9f9; color: #333; }
-        
-        /* Navigation */
-        nav { background: #5d5fef; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; color: white; }
-        nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; }
-
-        /* Hero Section */
-        .hero { 
-            background: linear-gradient(135deg, #7c4dff, #448aff); 
-            height: 400px; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            color: white; 
-            text-align: center;
+        body {
+            background: #0f172a; /* Dark tech background */
+            color: #f8fafc;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
         }
-        .hero h1 { font-size: 3rem; margin: 0; }
-        .hero p { font-size: 1.2rem; opacity: 0.9; }
-        .btn { background: white; color: #5d5fef; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 20px; display: inline-block; border: none; }
+        .container {
+            background: rgba(255, 255, 255, 0.05); /* Modern glass look */
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        h1 { color: #38bdf8; font-size: 2.5em; margin-bottom: 0.5em; }
+        .tech-box {
+            background: #1e293b;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        input[type="checkbox"] { accent-color: #38bdf8; }
+        button {
+            background: #38bdf8;
+            color: #0f172a;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover { background: #7dd3fc; }
+    </style>
+</head>
+<body>
 
-        /* Sections */
-        .section { padding: 80px 10%; text-align: center; }
-        .section-title { color: #5d5fef; font-size: 2rem; margin-bottom: 40px; }
+    <div class="container">
+        <h1>ARYA</h1>
+        <p>1st Year AI-ML Diploma Student</p>
 
-        /* Grid Layout for Features/Services */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); }
-        .card h3 { color: #5d5fef; }
+        <div class="tech-box">
+            <h3>Skills & Interests</h3>
+            <input type="checkbox" checked> Artificial Intelligence<br>
+            <input type="checkbox" checked> Machine Learning<br>
+            <input type="checkbox"> Genomics & Bioinformatics<br>
+            <input type="checkbox"> Advanced Python
+        </div>
 
-        /* Form Styling */
-        form { max-width: 600px; margin: 0 auto; text-align: left; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        input, textarea { width: 100%; padding: 12px; margin: 10px 0 20
+        <button onclick="alert('System Online!')">Initialize AI Model</button>
+
+        <hr style="margin-top: 30px; border: 0.5px solid rgba(255,255,255,0.1);">
+        <p style="font-size: 0.8em; color: #94a3b8;">Hosted via GitHub Pages</p>
+    </div>
+
+</body>
+</html>
