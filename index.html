@@ -1,9 +1,1074 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guddi's Mehndi Designs</title>
-<style>
-* {margin:0;padding:0;box-sizing:border-box;}
-body {font-family:Arial,sans-serif;line
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arya Mehndi Designs – Bridal Mehndi Artist, Pune</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & Variables ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:   #fdf6ee;
+      --warm:    #f9edd8;
+      --gold:    #d4a574;
+      --saffron: #f4a261;
+      --rust:    #e76f51;
+      --deep:    #7c3f1e;
+      --text:    #3d2007;
+      --muted:   #9b7057;
+      --white:   #ffffff;
+      --shadow:  rgba(124,63,30,.12);
+      --ff-head: 'Cormorant Garamond', Georgia, serif;
+      --ff-body: 'Nunito', sans-serif;
+      --radius:  14px;
+      --transition: .35s cubic-bezier(.4,0,.2,1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--ff-body);
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── Scrollbar ─────────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--warm); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+    /* ── Utility ───────────────────────────────────────────────── */
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 1.25rem; }
+
+    .section-label {
+      font-family: var(--ff-body);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--rust);
+      display: block;
+      margin-bottom: .5rem;
+    }
+
+    .section-title {
+      font-family: var(--ff-head);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      color: var(--deep);
+      line-height: 1.2;
+    }
+
+    .section-header { text-align: center; margin-bottom: 3rem; }
+
+    .section-header p {
+      max-width: 520px;
+      margin: .9rem auto 0;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    /* divider ornament */
+    .ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .75rem;
+      margin-top: .75rem;
+    }
+    .ornament::before,
+    .ornament::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .ornament span { color: var(--saffron); font-size: 1.1rem; }
+
+    /* buttons */
+    .btn {
+      display: inline-block;
+      padding: .75rem 2rem;
+      border-radius: 50px;
+      font-family: var(--ff-body);
+      font-weight: 700;
+      font-size: .9rem;
+      letter-spacing: .06em;
+      cursor: pointer;
+      border: none;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--saffron), var(--rust));
+      color: var(--white);
+      box-shadow: 0 4px 20px rgba(231,111,81,.35);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(231,111,81,.45);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--deep);
+      border: 2px solid var(--gold);
+    }
+    .btn-outline:hover {
+      background: var(--gold);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* ── NAV ───────────────────────────────────────────────────── */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 1rem 0;
+      transition: background var(--transition), box-shadow var(--transition);
+    }
+    #navbar.scrolled {
+      background: rgba(253,246,238,.96);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 20px var(--shadow);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--ff-head);
+      font-size: 1.55rem;
+      font-weight: 600;
+      color: var(--deep);
+      text-decoration: none;
+      line-height: 1.1;
+    }
+    .nav-logo span { display: block; font-size: .7rem; letter-spacing: .2em; font-family: var(--ff-body); font-weight: 600; color: var(--muted); text-transform: uppercase; }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: .88rem;
+      font-weight: 600;
+      letter-spacing: .05em;
+      color: var(--text);
+      text-decoration: none;
+      position: relative;
+      transition: color var(--transition);
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0; right: 0;
+      height: 2px;
+      background: var(--saffron);
+      transform: scaleX(0);
+      transition: transform var(--transition);
+    }
+    .nav-links a:hover { color: var(--rust); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    .nav-book { display: none; }
+
+    /* hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: .4rem;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--deep);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    /* mobile nav */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: rgba(253,246,238,.97);
+        backdrop-filter: blur(12px);
+        padding: 1rem 1.25rem 1.5rem;
+        box-shadow: 0 8px 30px var(--shadow);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { border-bottom: 1px solid rgba(212,165,116,.2); }
+      .nav-links a { display: block; padding: .75rem 0; font-size: 1rem; }
+      .hamburger { display: flex; }
+      .nav-book { display: inline-block; margin-top: .75rem; }
+    }
+    @media (min-width: 769px) {
+      .nav-cta { display: inline-block; }
+    }
+
+    /* ── HERO ──────────────────────────────────────────────────── */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 6rem 0 3rem;
+    }
+
+    /* mandala bg pattern */
+    #home::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(244,162,97,.15) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 10% 80%, rgba(212,165,116,.12) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    /* decorative circle */
+    .hero-ring {
+      position: absolute;
+      right: -120px; top: 50%;
+      transform: translateY(-50%);
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      border: 60px solid rgba(212,165,116,.08);
+      pointer-events: none;
+    }
+    .hero-ring::after {
+      content: '';
+      position: absolute;
+      inset: 40px;
+      border-radius: 50%;
+      border: 30px solid rgba(231,111,81,.06);
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 640px; }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(244,162,97,.15);
+      border: 1px solid rgba(212,165,116,.4);
+      padding: .35rem 1rem;
+      border-radius: 50px;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 1.5rem;
+      animation: fadeUp .6s ease both;
+    }
+
+    .hero-title {
+      font-family: var(--ff-head);
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 600;
+      color: var(--deep);
+      line-height: 1.05;
+      margin-bottom: 1rem;
+      animation: fadeUp .6s .1s ease both;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--saffron);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--muted);
+      font-weight: 400;
+      margin-bottom: 2.25rem;
+      animation: fadeUp .6s .2s ease both;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      animation: fadeUp .6s .3s ease both;
+    }
+
+    .hero-badge {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 3rem;
+      animation: fadeUp .6s .4s ease both;
+    }
+    .badge-item { text-align: center; }
+    .badge-num {
+      font-family: var(--ff-head);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--deep);
+      line-height: 1;
+    }
+    .badge-lbl { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+    .badge-sep { width: 1px; height: 40px; background: rgba(212,165,116,.4); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── SERVICES ──────────────────────────────────────────────── */
+    #services {
+      padding: 6rem 0;
+      background: var(--white);
+      position: relative;
+    }
+
+    #services::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--saffron), var(--rust), var(--saffron), var(--gold));
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--cream);
+      border-radius: var(--radius);
+      padding: 2.25rem 1.75rem;
+      text-align: center;
+      border: 1px solid rgba(212,165,116,.2);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(244,162,97,.05), transparent);
+      opacity: 0;
+      transition: var(--transition);
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px var(--shadow); border-color: var(--gold); }
+    .service-card:hover::before { opacity: 1; }
+
+    .service-icon {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      display: block;
+      line-height: 1;
+    }
+
+    .service-card h3 {
+      font-family: var(--ff-head);
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--deep);
+      margin-bottom: .5rem;
+    }
+
+    .service-card p { font-size: .88rem; color: var(--muted); }
+
+    .service-price {
+      display: inline-block;
+      margin-top: 1.25rem;
+      background: linear-gradient(135deg, var(--gold), var(--saffron));
+      color: var(--white);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      padding: .3rem .9rem;
+      border-radius: 50px;
+    }
+
+    /* ── GALLERY ───────────────────────────────────────────────── */
+    #gallery {
+      padding: 6rem 0;
+      background: var(--warm);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .gallery-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 4/3;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .5s ease;
+    }
+
+    .gallery-item:hover img { transform: scale(1.06); }
+
+    .gallery-item .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(124,63,30,.7) 0%, transparent 50%);
+      opacity: 0;
+      transition: var(--transition);
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem;
+    }
+    .gallery-item:hover .overlay { opacity: 1; }
+    .overlay span {
+      color: var(--white);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    /* ── AVAILABILITY ──────────────────────────────────────────── */
+    #availability {
+      padding: 4.5rem 0;
+      background: linear-gradient(135deg, var(--deep) 0%, #5c2d10 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #availability::before {
+      content: '✦';
+      position: absolute;
+      font-size: 28rem;
+      color: rgba(255,255,255,.03);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      line-height: 1;
+    }
+
+    .avail-inner { position: relative; z-index: 1; }
+
+    .avail-inner h2 {
+      font-family: var(--ff-head);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 1.25rem;
+    }
+
+    .avail-chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .75rem;
+      margin-bottom: 2rem;
+    }
+
+    .chip {
+      background: rgba(212,165,116,.15);
+      border: 1px solid rgba(212,165,116,.35);
+      color: var(--gold);
+      padding: .5rem 1.25rem;
+      border-radius: 50px;
+      font-size: .85rem;
+      font-weight: 600;
+    }
+
+    .avail-inner p { color: rgba(253,246,238,.65); font-size: .9rem; margin-top: 1rem; }
+
+    /* ── BOOKING ───────────────────────────────────────────────── */
+    #book {
+      padding: 6rem 0;
+      background: var(--white);
+    }
+
+    .booking-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .booking-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    .booking-info h3 {
+      font-family: var(--ff-head);
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--deep);
+      margin-bottom: 1rem;
+    }
+
+    .booking-info p { color: var(--muted); font-size: .92rem; margin-bottom: 1.5rem; }
+
+    .info-list { list-style: none; }
+    .info-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      padding: .65rem 0;
+      border-bottom: 1px solid rgba(212,165,116,.15);
+      font-size: .9rem;
+      color: var(--text);
+    }
+    .info-list li:last-child { border: none; }
+    .info-list .ico { font-size: 1.1rem; flex-shrink: 0; margin-top: .1rem; }
+
+    /* form */
+    .booking-form {
+      background: var(--cream);
+      border-radius: calc(var(--radius) * 1.4);
+      padding: 2.5rem;
+      border: 1px solid rgba(212,165,116,.2);
+      box-shadow: 0 8px 40px var(--shadow);
+    }
+
+    .form-group { margin-bottom: 1.2rem; }
+
+    .form-group label {
+      display: block;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: .45rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: .75rem 1rem;
+      border: 1.5px solid rgba(212,165,116,.3);
+      border-radius: 10px;
+      background: var(--white);
+      font-family: var(--ff-body);
+      font-size: .92rem;
+      color: var(--text);
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--saffron);
+      box-shadow: 0 0 0 3px rgba(244,162,97,.15);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+
+    .submit-btn {
+      width: 100%;
+      padding: .9rem;
+      background: linear-gradient(135deg, var(--saffron), var(--rust));
+      color: var(--white);
+      border: none;
+      border-radius: 10px;
+      font-family: var(--ff-body);
+      font-size: .95rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-top: .5rem;
+    }
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(231,111,81,.4);
+    }
+    .submit-btn:active { transform: translateY(0); }
+
+    /* ── CONTACT ───────────────────────────────────────────────── */
+    #contact {
+      padding: 6rem 0;
+      background: var(--cream);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .contact-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem 1.75rem;
+      text-align: center;
+      border: 1px solid rgba(212,165,116,.2);
+      transition: var(--transition);
+    }
+    .contact-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px var(--shadow); border-color: var(--gold); }
+
+    .contact-icon {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(244,162,97,.15), rgba(231,111,81,.1));
+      border: 1.5px solid rgba(212,165,116,.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      margin: 0 auto 1rem;
+    }
+
+    .contact-card h4 {
+      font-family: var(--ff-head);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--deep);
+      margin-bottom: .35rem;
+    }
+
+    .contact-card p { font-size: .88rem; color: var(--muted); }
+
+    .contact-card a {
+      display: inline-block;
+      margin-top: .75rem;
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--rust);
+      text-decoration: none;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      transition: color var(--transition);
+    }
+    .contact-card a:hover { color: var(--saffron); }
+
+    /* ── FOOTER ────────────────────────────────────────────────── */
+    footer {
+      background: var(--deep);
+      color: rgba(253,246,238,.7);
+      text-align: center;
+      padding: 2.5rem 1.25rem;
+    }
+    footer .footer-logo {
+      font-family: var(--ff-head);
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--gold);
+      display: block;
+      margin-bottom: .5rem;
+    }
+    footer p { font-size: .82rem; }
+    footer .heart { color: var(--saffron); }
+
+    /* ── Floating WhatsApp ─────────────────────────────────────── */
+    .fab-wa {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #fff;
+      font-size: 1.6rem;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37,211,102,.4);
+      z-index: 999;
+      transition: var(--transition);
+    }
+    .fab-wa:hover { transform: scale(1.1); box-shadow: 0 8px 28px rgba(37,211,102,.5); }
+
+  </style>
+</head>
+<body>
+
+<!-- ═══════ NAV ═══════════════════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="#home" class="nav-logo">
+      Arya Mehndi
+      <span>Designs</span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#book">Book Now</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#book" class="btn btn-primary nav-book">Book Now</a></li>
+    </ul>
+
+    <a href="#book" class="btn btn-primary nav-cta" style="display:none;" id="desktopBook">Book Now</a>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════ HERO ══════════════════════════════════════════════════ -->
+<section id="home">
+  <div class="hero-ring"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span>✦</span> Pune's Finest Mehndi Artist
+      </div>
+      <h1 class="hero-title">
+        Arya <em>Mehndi</em><br>Designs
+      </h1>
+      <p class="hero-sub">
+        Bridal Mehndi Artist crafting intricate, timeless designs<br>
+        for your most cherished celebrations.
+      </p>
+      <div class="hero-actions">
+        <a href="#book" class="btn btn-primary">Book Your Appointment</a>
+        <a href="#gallery" class="btn btn-outline">View Gallery</a>
+      </div>
+      <div class="hero-badge">
+        <div class="badge-item">
+          <div class="badge-num">500+</div>
+          <div class="badge-lbl">Happy Brides</div>
+        </div>
+        <div class="badge-sep"></div>
+        <div class="badge-item">
+          <div class="badge-num">8+</div>
+          <div class="badge-lbl">Years Experience</div>
+        </div>
+        <div class="badge-sep"></div>
+        <div class="badge-item">
+          <div class="badge-num">100%</div>
+          <div class="badge-lbl">Natural Henna</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SERVICES ══════════════════════════════════════════════ -->
+<section id="services">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">What We Offer</span>
+      <h2 class="section-title">Our Mehndi Services</h2>
+      <div class="ornament"><span>✦</span></div>
+      <p>From grand bridal ceremonies to playful kids' designs — we bring artistry to every occasion.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-icon">👰</span>
+        <h3>Wedding Mehndi</h3>
+        <p>Elaborate bridal designs featuring intricate paisleys, florals &amp; traditional motifs for the bride and bridesmaids.</p>
+        <span class="service-price">From ₹2,500</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🌙</span>
+        <h3>Eid Special</h3>
+        <p>Beautiful Arabic and Indo-Arabic fusion designs to celebrate Eid with elegance and festive joy.</p>
+        <span class="service-price">From ₹800</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🎉</span>
+        <h3>Party Mehndi</h3>
+        <p>Trendy, contemporary designs for sangeets, birthdays, baby showers, and all your festive gatherings.</p>
+        <span class="service-price">From ₹500</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🌸</span>
+        <h3>Kids Mehndi</h3>
+        <p>Cute, quick &amp; cheerful designs — flowers, butterflies, and cartoon motifs kids absolutely love.</p>
+        <span class="service-price">From ₹150</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ GALLERY ════════════════════════════════════════════════ -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Our Portfolio</span>
+      <h2 class="section-title">Design Gallery</h2>
+      <div class="ornament"><span>✦</span></div>
+      <p>A glimpse into our world of intricate artistry and timeless henna creations.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://via.placeholder.com/400x300/d4a574/fff?text=Bridal+Mehndi" alt="Bridal Mehndi Design" loading="lazy" />
+        <div class="overlay"><span>Bridal</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://via.placeholder.com/400x300/f4a261/fff?text=Arabic+Design" alt="Arabic Mehndi Design" loading="lazy" />
+        <div class="overlay"><span>Arabic</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://via.placeholder.com/400x300/e76f51/fff?text=Eid+Special" alt="Eid Special Design" loading="lazy" />
+        <div class="overlay"><span>Eid Special</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://via.placeholder.com/400x300/c8955c/fff?text=Floral+Mehndi" alt="Floral Mehndi Design" loading="lazy" />
+        <div class="overlay"><span>Floral</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://via.placeholder.com/400x300/b87333/fff?text=Party+Design" alt="Party Mehndi Design" loading="lazy" />
+        <div class="overlay"><span>Party</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://via.placeholder.com/400x300/e8956d/fff?text=Kids+Mehndi" alt="Kids Mehndi Design" loading="lazy" />
+        <div class="overlay"><span>Kids</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ AVAILABILITY ═══════════════════════════════════════════ -->
+<section id="availability">
+  <div class="container avail-inner">
+    <h2>Available for Your Celebrations</h2>
+    <div class="avail-chips">
+      <span class="chip">📅 Weekends: 10AM – 8PM</span>
+      <span class="chip">📆 Weekdays: By Appointment</span>
+      <span class="chip">🏠 Home Visits Available</span>
+      <span class="chip">🔖 Book 1 Week in Advance</span>
+    </div>
+    <a href="#book" class="btn btn-primary">Check My Availability</a>
+    <p>Serving Pune &amp; surrounding areas · Travel charges may apply outside Pune</p>
+  </div>
+</section>
+
+<!-- ═══════ BOOKING ════════════════════════════════════════════════ -->
+<section id="book">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Book a Session</span>
+      <h2 class="section-title">Reserve Your Date</h2>
+      <div class="ornament"><span>✦</span></div>
+      <p>Fill in your details below and I'll confirm your appointment within 24 hours.</p>
+    </div>
+
+    <div class="booking-wrap">
+      <div class="booking-info">
+        <h3>Why Book With Me?</h3>
+        <p>Every design is crafted with pure, organic henna and heartfelt attention to detail — because your celebration deserves nothing less.</p>
+        <ul class="info-list">
+          <li><span class="ico">🌿</span><span>100% pure, organic henna — safe for all skin types</span></li>
+          <li><span class="ico">🎨</span><span>Custom designs tailored to your style and occasion</span></li>
+          <li><span class="ico">🏡</span><span>Home visits and venue bookings available across Pune</span></li>
+          <li><span class="ico">⏱️</span><span>Punctual, professional service — your time is precious</span></li>
+          <li><span class="ico">📸</span><span>Free portfolio photos of your finished design</span></li>
+          <li><span class="ico">💬</span><span>WhatsApp consultation before your appointment</span></li>
+        </ul>
+      </div>
+
+      <div class="booking-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">Your Name</label>
+            <input type="text" id="fname" name="name" placeholder="e.g. Priya Sharma" required />
+          </div>
+          <div class="form-group">
+            <label for="fphone">Phone Number</label>
+            <input type="tel" id="fphone" name="phone" placeholder="+91 98765 43210" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fevent">Event Type</label>
+            <select id="fevent" name="event" required>
+              <option value="" disabled selected>Select event…</option>
+              <option value="wedding">Wedding / Bridal</option>
+              <option value="eid">Eid Special</option>
+              <option value="party">Party / Sangeet</option>
+              <option value="kids">Kids Mehndi</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fdate">Preferred Date</label>
+            <input type="date" id="fdate" name="date" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fmsg">Additional Details</label>
+          <textarea id="fmsg" name="message" placeholder="Tell me about your design preferences, number of people, venue location…"></textarea>
+        </div>
+        <button type="button" class="submit-btn" onclick="handleBooking()">✦ Confirm Booking</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CONTACT ════════════════════════════════════════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Get in Touch</span>
+      <h2 class="section-title">Contact Us</h2>
+      <div class="ornament"><span>✦</span></div>
+      <p>Have questions? Reach out anytime — I'd love to be part of your special day.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">💬</div>
+        <h4>WhatsApp</h4>
+        <p>Quick replies, design consultations &amp; confirmations</p>
+        <a href="https://wa.me/919876543210" target="_blank" rel="noopener">Chat Now →</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📞</div>
+        <h4>Phone</h4>
+        <p>+91 98765 43210<br>Available 9AM – 9PM daily</p>
+        <a href="tel:+919876543210">Call Now →</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📍</div>
+        <h4>Location</h4>
+        <p>Based in Pune, Maharashtra<br>Home visits across Pune &amp; PCMC</p>
+        <a href="https://maps.google.com/?q=Pune,Maharashtra" target="_blank" rel="noopener">View Map →</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📸</div>
+        <h4>Instagram</h4>
+        <p>See daily designs, reels &amp; client work</p>
+        <a href="https://instagram.com" target="_blank" rel="noopener">@aryamehndi →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═════════════════════════════════════════════════ -->
+<footer>
+  <span class="footer-logo">Arya Mehndi Designs</span>
+  <p>Crafted with <span class="heart">♥</span> in Pune, Maharashtra &nbsp;·&nbsp; © 2024 Arya Mehndi Designs</p>
+</footer>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/919876543210" class="fab-wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+  💬
+</a>
+
+<!-- ═══════ SCRIPTS ════════════════════════════════════════════════ -->
+<script>
+  /* ── Navbar scroll effect ── */
+  const navbar = document.getElementById('navbar');
+  const desktopBook = document.getElementById('desktopBook');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      navbar.classList.add('scrolled');
+      desktopBook.style.display = 'inline-block';
+    } else {
+      navbar.classList.remove('scrolled');
+      desktopBook.style.display = 'none';
+    }
+  });
+
+  /* ── Hamburger toggle ── */
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('navLinks');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+
+  /* close nav on link click */
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  /* ── Set min date on date picker ── */
+  const today = new Date();
+  const minDate = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
+  const dd = String(minDate.getDate()).padStart(2,'0');
+  const mm = String(minDate.getMonth()+1).padStart(2,'0');
+  const yyyy = minDate.getFullYear();
+  document.getElementById('fdate').min = `${yyyy}-${mm}-${dd}`;
+
+  /* ── Booking form handler ── */
+  function handleBooking() {
+    const name  = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+    const event = document.getElementById('fevent').value;
+    const date  = document.getElementById('fdate').value;
+
+    if (!name || !phone || !event || !date) {
+      alert('Please fill in all required fields (Name, Phone, Event Type, and Date).');
+      return;
+    }
+
+    const eventLabels = {
+      wedding: 'Wedding / Bridal',
+      eid:     'Eid Special',
+      party:   'Party / Sangeet',
+      kids:    'Kids Mehndi',
+      other:   'Other'
+    };
+
+    const formattedDate = new Date(date).toLocaleDateString('en-IN', {
+      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+    });
+
+    alert(
+      `✦ Booking Confirmed! ✦\n\n` +
+      `Thank you, ${name}!\n\n` +
+      `📋 Event: ${eventLabels[event]}\n` +
+      `📅 Date: ${formattedDate}\n` +
+      `📞 We'll WhatsApp you at ${phone} within 24 hours to confirm details.\n\n` +
+      `Looking forward to being part of your celebration! 🌸`
+    );
+
+    /* reset form */
+    ['fname','fphone','fdate','fmsg'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('fevent').selectedIndex = 0;
+  }
+
+  /* ── Intersection Observer for fade-in ── */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.service-card, .gallery-item, .contact-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity .5s ease, transform .5s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
