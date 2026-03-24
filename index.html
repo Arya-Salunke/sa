@@ -2,69 +2,269 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARYA | AI-ML Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            background: #0f172a; /* Dark tech background */
-            color: #f8fafc;
-            font-family: 'Segoe UI', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            min-height: 100vh;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
         .container {
-            background: rgba(255, 255, 255, 0.05); /* Modern glass look */
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            padding: 2rem 0;
             text-align: center;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            box-shadow: 0 4px 20px rgba(0, 255, 150, 0.1);
+            position: relative;
         }
-        h1 { color: #38bdf8; font-size: 2.5em; margin-bottom: 0.5em; }
-        .tech-box {
-            background: #1e293b;
-            padding: 15px;
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(0, 255, 150, 0.05) 50%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #00ffff, #00ff88, #00ffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #00ff88;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: rgba(20, 20, 30, 0.8);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ffff, #00ff88, transparent);
+            transition: left 0.5s;
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.2);
+            border-color: rgba(0, 255, 136, 0.5);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            color: #b0b0b0;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(40, 40, 60, 0.8);
+            border: 1px solid rgba(0, 255, 136, 0.3);
             border-radius: 10px;
-            margin: 20px 0;
-            text-align: left;
+            color: #e0e0e0;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
         }
-        input[type="checkbox"] { accent-color: #38bdf8; }
+
+        input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+            outline: none;
+            border-color: #00ff88;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+        }
+
+        input[type="checkbox"] {
+            margin-right: 0.5rem;
+            accent-color: #00ff88;
+            transform: scale(1.2);
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
         button {
-            background: #38bdf8;
-            color: #0f172a;
+            background: linear-gradient(45deg, #00ffff, #00ff88);
+            color: #0a0a0a;
             border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            font-weight: bold;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(0, 255, 136, 0.4);
+            position: relative;
+            overflow: hidden;
         }
-        button:hover { background: #7dd3fc; }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 255, 136, 0.6);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.1);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 2rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <h1>ARYA</h1>
-        <p>1st Year AI-ML Diploma Student</p>
-
-        <div class="tech-box">
-            <h3>Skills & Interests</h3>
-            <input type="checkbox" checked> Artificial Intelligence<br>
-            <input type="checkbox" checked> Machine Learning<br>
-            <input type="checkbox"> Genomics & Bioinformatics<br>
-            <input type="checkbox"> Advanced Python
+    <header>
+        <div class="container">
+            <h1>ARYA | AI-ML Portfolio</h1>
         </div>
+    </header>
 
-        <button onclick="alert('System Online!')">Initialize AI Model</button>
+    <main class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="grid">
+                <div class="card">
+                    <p>1st-year AI-ML diploma student passionate about artificial intelligence, machine learning, and neural networks. Experienced in Python, TensorFlow, and building intelligent systems.</p>
+                    <p>Currently exploring deep learning models and deploying AI solutions. Eager to contribute to innovative AI projects.</p>
+                </div>
+                <div class="card">
+                    <div class="iframe-container">
+                        <iframe src="https://projector.tensorflow.org/" title="TensorFlow Embedding Projector"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <hr style="margin-top: 30px; border: 0.5px solid rgba(255,255,255,0.1);">
-        <p style="font-size: 0.8em; color: #94a3b8;">Hosted via GitHub Pages</p>
-    </div>
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Current Tech Stack</h3>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" checked> Python</label>
+                        <label><input type="checkbox" checked> TensorFlow</label>
+                        <label><input type="checkbox" checked> PyTorch</label>
+                        <label><input type="checkbox"> Scikit-learn</label>
+                        <label><input type="checkbox" checked> NumPy & Pandas</label>
+                        <label><input type="checkbox"> Git</label>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Contact Me</h3>
+                    <form>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
 
+    <script>
+        // Neural Network button functionality
+        document.querySelector('button[type="submit"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Neural Network Initialized!');
+        });
+
+        // Form submission prevention (layout only)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+        });
+    </script>
 </body>
 </html>
