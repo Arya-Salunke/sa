@@ -124,103 +124,7 @@
       transform: translateY(-2px);
     }
 
-    /* ── NAV ───────────────────────────────────────────────────── */
-    #navbar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 1000;
-      padding: 1rem 0;
-      transition: background var(--transition), box-shadow var(--transition);
-    }
-    #navbar.scrolled {
-      background: rgba(253,246,238,.96);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 2px 20px var(--shadow);
-    }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .nav-logo {
-      font-family: var(--ff-head);
-      font-size: 1.55rem;
-      font-weight: 600;
-      color: var(--deep);
-      text-decoration: none;
-      line-height: 1.1;
-    }
-    .nav-logo span { display: block; font-size: .7rem; letter-spacing: .2em; font-family: var(--ff-body); font-weight: 600; color: var(--muted); text-transform: uppercase; }
 
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: .88rem;
-      font-weight: 600;
-      letter-spacing: .05em;
-      color: var(--text);
-      text-decoration: none;
-      position: relative;
-      transition: color var(--transition);
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -3px; left: 0; right: 0;
-      height: 2px;
-      background: var(--saffron);
-      transform: scaleX(0);
-      transition: transform var(--transition);
-    }
-    .nav-links a:hover { color: var(--rust); }
-    .nav-links a:hover::after { transform: scaleX(1); }
-
-    .nav-book { display: none; }
-
-    /* hamburger */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: .4rem;
-      background: none;
-      border: none;
-    }
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--deep);
-      border-radius: 2px;
-      transition: var(--transition);
-    }
-
-    /* mobile nav */
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        gap: 0;
-        position: absolute;
-        top: 100%; left: 0; right: 0;
-        background: rgba(253,246,238,.97);
-        backdrop-filter: blur(12px);
-        padding: 1rem 1.25rem 1.5rem;
-        box-shadow: 0 8px 30px var(--shadow);
-      }
-      .nav-links.open { display: flex; }
-      .nav-links li { border-bottom: 1px solid rgba(212,165,116,.2); }
-      .nav-links a { display: block; padding: .75rem 0; font-size: 1rem; }
-      .hamburger { display: flex; }
-      .nav-book { display: inline-block; margin-top: .75rem; }
-    }
-    @media (min-width: 769px) {
-      .nav-cta { display: inline-block; }
-    }
 
     /* ── HERO ──────────────────────────────────────────────────── */
     #home {
@@ -229,7 +133,7 @@
       align-items: center;
       position: relative;
       overflow: hidden;
-      padding: 6rem 0 3rem;
+      padding: 3rem 0 3rem;
     }
 
     /* mandala bg pattern */
@@ -709,30 +613,6 @@
 </head>
 <body>
 
-<!-- ═══════ NAV ═══════════════════════════════════════════════════ -->
-<nav id="navbar">
-  <div class="container nav-inner">
-    <a href="#home" class="nav-logo">
-      Arya Mehndi
-      <span>Designs</span>
-    </a>
-
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#book">Book Now</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#book" class="btn btn-primary nav-book">Book Now</a></li>
-    </ul>
-
-    <a href="#book" class="btn btn-primary nav-cta" style="display:none;" id="desktopBook">Book Now</a>
-
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
 
 <!-- ═══════ HERO ══════════════════════════════════════════════════ -->
 <section id="home">
@@ -1186,33 +1066,6 @@
 
 <!-- ═══════ SCRIPTS ════════════════════════════════════════════════ -->
 <script>
-  /* ── Navbar scroll effect ── */
-  const navbar = document.getElementById('navbar');
-  const desktopBook = document.getElementById('desktopBook');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 60) {
-      navbar.classList.add('scrolled');
-      desktopBook.style.display = 'inline-block';
-    } else {
-      navbar.classList.remove('scrolled');
-      desktopBook.style.display = 'none';
-    }
-  });
-
-  /* ── Hamburger toggle ── */
-  const hamburger = document.getElementById('hamburger');
-  const navLinks  = document.getElementById('navLinks');
-
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-  });
-
-  /* close nav on link click */
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => navLinks.classList.remove('open'));
-  });
-
   /* ── Set min date on date picker ── */
   const today = new Date();
   const minDate = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
